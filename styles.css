@@ -1,0 +1,129 @@
+/* Fondo con imagen y opacidad */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/pesebre.webp'); 
+  background-repeat: round; /* Evita repetición */
+  opacity: 0.6; /* Ajusta la opacidad */
+  z-index: -1; /* Envía el fondo detrás del contenido */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Centra todo verticalmente */
+}
+
+/* Caja principal del contenido */
+.form-box, #sorteo {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-opaco */
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  margin: 10px;
+  text-align: center;
+}
+
+/* Títulos */
+h1 {
+  color: #d7263d; /* Rojo navideño */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #2e8b57; /* Verde navideño */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+input[type="text"] {
+  font-size: 1rem;
+  padding: 10px;
+  border: 2px solid #2e8b57;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+/* Botones */
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #d7263d; /* Rojo navideño */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #a81e2c;
+}
+
+/* Nombre dinámico */
+.name-slot {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #2e8b57;
+  border: 4px solid #d7263d;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: pop 0.5s ease-in-out;
+}
+
+/* Tabla de ganadores */
+#winners-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 2px solid #c21807;
+}
+
+#winners-table th {
+  background-color: #c21807;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#winners-table td {
+  padding: 10px;
+  border: 1px solid #c21807;
+  text-align: center;
+}
+
+#winners-table tr:nth-child(even) {
+  background-color: #e8f5e9;
+}
+
+/* Animaciones */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

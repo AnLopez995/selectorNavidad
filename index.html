@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 Registro y Selección de Ganadores 🎅</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1>🎁 Registro de Participantes 🎅 - TI</h1>
+
+      <!-- Registro de Cédula -->
+      <div id="registration">
+        <h2>Ingresar al Sorteo</h2>
+        <input type="text" id="cedula" placeholder="Digite su cédula" />
+        <button id="register-btn">Registrarse</button>
+        <p id="registration-msg"></p>
+      </div>
+
+      <!-- Formulario de Registro Manual -->
+      <div id="manual-registration" style="display: none;">
+        <h2>Registro Manual</h2>
+        <input type="text" id="manual-cedula" placeholder="Digite su cédula" />
+        <input type="text" id="manual-nombre" placeholder="Digite su nombre" />
+        <button id="manual-register-btn">Agregar Participante</button>
+        <p id="manual-registration-msg"></p>
+      </div>
+
+      <button id="finalize-btn">Finalizar Registro</button>
+    </div>
+
+    <!-- Sorteo -->
+    <div id="sorteo" class="form-box" style="display: none;">
+      <h2 id="phase-title">🎲 Fase 1: Selección de 5 Ganadores</h2>
+      <div id="name-display" class="name-slot">🎁 ? 🎁</div>
+      <button id="next-btn">Siguiente Nombre</button>
+      <button id="reset-btn" style="display: none;">Reiniciar Sorteo</button>
+
+      <!-- Tabla de Ganadores -->
+      <div id="winners-table-container">
+        <h3>🏆 Lista de Ganadores</h3>
+        <table id="winners-table" border="1">
+          <thead>
+            <tr>
+              <th>Fase</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody id="winners-body">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <audio id="drum-sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
