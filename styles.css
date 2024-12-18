@@ -127,3 +127,19 @@ button:hover {
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
+
+.slide-up {
+  display: inline-block;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
